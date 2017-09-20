@@ -1,0 +1,88 @@
+body{
+    background-color:whitesmoke;
+}
+h1 {
+    padding-top: 5%;
+    color: black;
+}
+.form-control {
+    display: block;
+    width: 98%;
+    margin-bottom: 5px;
+}
+
+#login_button{
+    color:#FFFFFF; 
+    background-color: #2f96b4;
+    display: block;
+    text-align: center;
+    width:98%;
+    margin-bottom: 5px;
+}
+
+#register_button{
+    color:#FFFFFF;
+    background-color: #51a351;
+    display : block;
+    text-align: center;  
+    width:98%;
+}
+
+
+@media (min-width: 768px) 
+{
+    h1
+    {
+        text-align: center;
+    }
+.form-control
+    {
+        margin:auto;
+        margin-bottom: 5px;
+        width:50%;
+    }
+    #register_button
+    {
+        margin:auto;
+        margin-bottom: 5px;
+        width:50%;
+    }
+    #login_button
+    {
+        margin:auto;
+        margin-bottom: 5px;
+        width:50%;        
+    }
+
+}
+@media (min-width: 992px)
+{
+    
+.form-control
+    {
+        width:35%;
+    }
+    #register_button
+    {
+        width:35%;
+    }
+    #login_button
+    {
+        width:35%;        
+    }
+}
+@media (min-width:1200px)
+{
+.form-control
+    {
+        width:30%;
+    }
+    #register_button
+    {
+        width:30%;
+    }
+    #login_button
+    {
+        width:30%;        
+    }
+}

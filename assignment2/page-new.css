@@ -1,0 +1,86 @@
+body{
+    background-color:white;
+}
+h1{
+    font-size: 2em;
+    color: grey;
+}
+a{
+    text-decoration: none;
+    color:whitesmoke;
+}
+h4{
+    margin-left:2%;
+    color:black;
+}
+
+.form-control
+{
+    margin-left: 5%;
+    width:90%;
+}
+.profileTop
+{
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    width: 100%;
+    background-color: whitesmoke; 
+}
+.profileBottom
+{
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    width: 100%;
+    background-color: whitesmoke;  
+    position: fixed;
+    bottom:0;
+}
+#user
+{
+    float:right;
+    margin-top:25px;
+    margin-right:20px;
+    font-size: 20px;
+    color: #2f96b4;
+}
+#arrowleft
+{
+    color: black;
+    float:left;
+    margin-top:25px;
+    margin-left:2%;
+    font-size: 25px;
+}
+#ok
+{
+    color:black;
+    float:right;
+    margin-top:25px;
+    margin-right:5%;
+    font-size: 20px;
+}
+#delete
+{
+    display: block;
+    text-align: center;
+    width: 90%;
+    padding:2px;
+    margin-left:5%;
+    margin-bottom:5px;
+}
+#upload
+{
+    display:block;
+    padding:2px;
+    text-align: center;
+    width: 90%;
+    margin-left:5%;
+    margin-bottom:5px;
+    background-color:#2f96b4;
+}
+p{
+    color:black;
+    margin: 5%;
+}
