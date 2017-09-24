@@ -1,26 +1,59 @@
 <!DOCTYPE html>
 <html>
-    <div class="profileTop">
-        <header>
-            <a href="website-list.html"><i class="glyphicon glyphicon-chevron-left col-sm-1 col-xs-1" id="arrowleft"></i></a>
-            <h1 class="col-sm-8 col-xs-8">New Website</h1> 
-                <a href="website-list.html"><i class="glyphicon glyphicon-ok col-sm-1 col-xs-1" id="ok"></i></a>
+        <header class="header">
+            <div class ="lContainer">
+            <a href="profile.html">
+                <i class="glyphicon glyphicon-chevron-left col-sm-1 col-xs-1" id="arrowleft"></i>
+            </a>
+            <a href="profile.html">
+                <h1 class="headerH1 col-sm-4 col-xs-6">Websites</h1> 
+            </a>
+            <a href="website-new.html">
+                <i class="glyphicon glyphicon-plus col-sm-1 col-xs-1" id="plus"></i>
+            </a>
+            </div>
+                <a href="profile.html">
+                    <i class="glyphicon glyphicon-chevron-left col-sm-1 col-xs-1" id="arrowleft2"></i>
+                </a>
+                <h1 class="headerH2 col-sm-5 col-xs-8">New Website</h1> 
+                <a href="profile.html"> 
+                    <i class="glyphicon glyphicon-ok col-sm-1" id="ok"></i> 
+                </a>
         </header>
-    </div>
     <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="website-new.css">
-   
-    <h4 class= col-sm-12>Name</h4>
-    <input class="form-control" type="text" placeholder="Name">
-    <h4 class= col-sm-12>Description</h4>
-    <textarea class="form-control"type=" textarea" id= "textarea" placeholder="Description"></textarea>
-    </head>
+        <div class="container col-sm-12">
+            <div class="lContainer col-sm-6">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <link rel="stylesheet" href="styles.css">
 
-    <div class="profileBottom">
-        <footer> 
-            <a href="profile.html"><i class="glyphicon glyphicon-user col-sm-1" id="user"></i></a>
+                <h4 class= "contentTitle col-sm-6">Address Book App</h4>
+                <a href="website-edit.html">
+                    <i class="glyphicon glyphicon-cog col-sm-2 col-xs-2" id="cog"></i>
+                </a>
+                <h4 class= "contentTitle col-sm-6 col-xs-6">Blogger</h4>
+                <a href="website-edit.html">
+                    <i class="glyphicon glyphicon-cog col-sm-2 col-xs-2 " id="cog"></i>
+                </a>
+                <h4 class= "contentTitle col-sm-6 col-xs-6">Blogging App</h4>
+                <a href="website-edit.html">
+                    <i class="glyphicon glyphicon-cog col-sm-2 col-xs-2" id="cog"></i>
+                </a>
+                <h4 class= "contentTitle col-sm-6 col-xs-6">Script Testing App</h4>
+                <a href="website-edit.html">
+                    <i class="glyphicon glyphicon-cog col-sm-2 col-xs-2" id="cog"></i>
+                </a>
+            </div>
+            <div class="rContainer col-sm-6">
+                <h4 class="subTitle-landscape col-sm-12">Name</h4>
+                <input class="form-control-split" type="text" placeholder="Name">
+                <h4 class="subTitle-landscape col-sm-12">Description</h4>
+                <textarea class="form-control-split"type=" textarea" id= "textarea" placeholder="Description"></textarea>
+            </div>
+        </div>
+    </head>
+        <footer class="profileBottom"> 
+            <a href="profile.html">
+                <i class="glyphicon glyphicon-user col-sm-1" id="user"></i>
+            </a>
         </footer>
-    </div>
 </html>
