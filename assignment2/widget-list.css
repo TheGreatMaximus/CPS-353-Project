@@ -53,11 +53,22 @@ h4
 }
 .profileBottom
 {
-    margin: 0;
     padding: 0;
     height: 60px;
     width: 100%;
     background-color: whitesmoke;  
-    position: fixed;
-    bottom:0;
+    position: relative;
+    bottom:0px;
+}
+@media (min-width: 768px) 
+{
+    .image
+    {
+        margin:auto;
+        width:60%;
+    }
+    .profileBottom
+    {
+        display: none;
+    }
 }
