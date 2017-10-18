@@ -12,17 +12,16 @@ var core_1 = require("@angular/core");
 var user_service_1 = require("../../services/user.service");
 var router_1 = require("@angular/router");
 var LoginComponent = (function () {
-    function LoginComponent(userService, route, router) {
+    function LoginComponent(userService, router) {
         this.userService = userService;
-        this.route = route;
         this.router = router;
     }
-    LoginComponent.prototype.login = function (user) {
+    LoginComponent.prototype.login = function (userForm) {
         this.errorMessage = "";
-        user = this.userService.findUserByCredentials(user.username, user.password);
-        if (user) {
+        this.user = this.userService.findUserByCredentials(userForm.username, userForm.password);
+        if (this.user) {
             //redirect to /user/user.id
-            this.router.navigate(['/user', user.id]);
+            this.router.navigate(['/user', this.user.id]);
         }
         else {
             //show error message
@@ -36,7 +35,7 @@ LoginComponent = __decorate([
         templateUrl: 'app/components/user/login.component.html',
         styleUrls: ['app/components/user/userstyles.component.css'],
     }),
-    __metadata("design:paramtypes", [user_service_1.UserService, router_1.ActivatedRoute, router_1.Router])
+    __metadata("design:paramtypes", [user_service_1.UserService, router_1.Router])
 ], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map

@@ -19,6 +19,7 @@ var login_component_1 = require("./components/user/login.component");
 var register_component_1 = require("./components/user/register.component");
 var router_1 = require("@angular/router");
 var routes_1 = require("./routes");
+var forms_1 = require("@angular/forms");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,7 +27,7 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(routes_1.appRoutes)],
+        imports: [platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(routes_1.appRoutes), forms_1.FormsModule],
         declarations: [websites_app_component_1.WebsitesAppComponent, navbar_component_1.NavbarComponent, login_component_1.LoginComponent,
             register_component_1.RegisterComponent, profile_component_1.ProfileComponent],
         providers: [website_service_1.WebsiteService, user_service_1.UserService],

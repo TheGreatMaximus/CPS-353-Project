@@ -1,8 +1,8 @@
 import {Component } from '@angular/core'
 import {UserService} from '../../services/user.service'
-import {ActivatedRoute,Router} from '@angular/router'
+import {Router} from '@angular/router'
 import { IUser } from '../../services/user.model'
-
+import {NgForm} from '@angular/forms'
 
 @Component({
 
@@ -14,18 +14,18 @@ import { IUser } from '../../services/user.model'
 
 export class LoginComponent  {
     user:IUser
-    constructor(private userService: UserService,private route: ActivatedRoute,private router:Router) {
+    constructor(private userService: UserService,private router:Router) {
     }
 
         errorMessage:any
-    login(user)
+    login(userForm)
     {
         this.errorMessage=""
-        user = this.userService.findUserByCredentials(user.username, user.password);
-        if(user)
+        this.user = this.userService.findUserByCredentials(userForm.username, userForm.password);
+        if(this.user)
            {
              //redirect to /user/user.id
-             this.router.navigate(['/user',user.id])
+             this.router.navigate(['/user',this.user.id])
            }
         else 
         {

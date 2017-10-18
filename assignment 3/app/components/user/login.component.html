@@ -2,12 +2,13 @@
         <title>Login</title>
         <h1 class = "title">Login</h1>
 
-        <form>
+        <form (ngSubmit)="login(loginuser.value)" #loginuser="ngForm">
                 <input (ngModel)="username" name="username"class="form-control" type="text" placeholder="Username">
                 <input (ngModel)="password" name="password"class="form-control" type="password" placeholder="Password">
+                <a (click)="login(loginuser.value)" class="btn-primary" role="button" type="submit" >Login</a>
+                <a routerLink="/register" class="btn-success" role="button" >Register</a>
         </form>
-        <a (click)="login(user)" class="btn-primary" role="button" >Login</a>
 
-        <a routerLink="/register" class="btn-success" role="button" >Register</a>
+        
 
         

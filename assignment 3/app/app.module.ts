@@ -9,9 +9,10 @@ import { LoginComponent } from './components/user/login.component'
 import { RegisterComponent } from './components/user/register.component'
 import { RouterModule,Routes } from '@angular/router' ;
 import { appRoutes } from './routes'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
-    imports: [BrowserModule,RouterModule.forRoot(appRoutes)],
+    imports: [BrowserModule,RouterModule.forRoot(appRoutes),FormsModule],
     declarations: [WebsitesAppComponent, NavbarComponent,LoginComponent,
                     RegisterComponent,ProfileComponent],
     providers: [WebsiteService,UserService],
