@@ -16,10 +16,9 @@ export class ProfileComponent implements OnInit {
     constructor(private userService: UserService, private route: ActivatedRoute) {
     }
     ngOnInit() {
-        console.log("text")
         console.log(this.route.snapshot.params['uid'])
         this.user = this.userService.findUserById(+this.route.snapshot.params['uid'])
-        //console.log(this.user.firstName)
+        console.log(this.user.firstName)
         console.log(this.user)
         }
 

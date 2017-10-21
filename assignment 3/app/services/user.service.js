@@ -31,6 +31,21 @@ var UserService = (function () {
     UserService.prototype.deleteUser = function (userId) {
         delete USERS[userId];
     };
+    UserService.prototype.maxid = function () {
+        var temp = 0;
+        var counter = 0;
+        var max = USERS.length;
+        while (counter < max) {
+            if (temp < USERS[counter].id) {
+                console.log(USERS[counter].id);
+                console.log(USERS[counter].userName);
+                temp = USERS[counter].id;
+                console.log(temp);
+            }
+            counter = counter + 1;
+        }
+        return temp + 1;
+    };
     return UserService;
 }());
 UserService = __decorate([

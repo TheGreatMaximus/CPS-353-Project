@@ -17,10 +17,9 @@ var ProfileComponent = (function () {
         this.route = route;
     }
     ProfileComponent.prototype.ngOnInit = function () {
-        console.log("text");
         console.log(this.route.snapshot.params['uid']);
         this.user = this.userService.findUserById(+this.route.snapshot.params['uid']);
-        //console.log(this.user.firstName)
+        console.log(this.user.firstName);
         console.log(this.user);
     };
     return ProfileComponent;

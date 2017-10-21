@@ -16,6 +16,30 @@ var RegisterComponent = (function () {
         this.userService = userService;
         this.route = route;
     }
+    RegisterComponent.prototype.register = function (registerForm) {
+        console.log(registerForm.username);
+        if (registerForm.password == registerForm.password2) {
+            var user = {
+                userName: '',
+                firstName: '',
+                lastName: '',
+                password: '',
+                id: 1
+            };
+            console.log(user);
+            user.userName = registerForm.username;
+            user.firstName = registerForm.firstname;
+            user.lastName = registerForm.lastname;
+            user.password = registerForm.password;
+            user.id = this.userService.maxid();
+            console.log(user);
+            this.userService.createUser(user);
+            this.route.navigate(['/user', user.id]);
+        }
+        else {
+            this.errorMessage = "passwords do not match.";
+        }
+    };
     return RegisterComponent;
 }());
 RegisterComponent = __decorate([
@@ -23,7 +47,7 @@ RegisterComponent = __decorate([
         templateUrl: 'app/components/user/register.component.html',
         styleUrls: ['app/components/user/userstyles.component.css']
     }),
-    __metadata("design:paramtypes", [user_service_1.UserService, router_1.ActivatedRoute])
+    __metadata("design:paramtypes", [user_service_1.UserService, router_1.Router])
 ], RegisterComponent);
 exports.RegisterComponent = RegisterComponent;
 //# sourceMappingURL=register.component.js.map

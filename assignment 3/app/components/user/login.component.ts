@@ -1,15 +1,13 @@
 import {Component } from '@angular/core'
 import {UserService} from '../../services/user.service'
 import {Router} from '@angular/router'
-import { IUser } from '../../services/user.model'
+import { IUser} from '../../services/user.model'
 import {NgForm} from '@angular/forms'
 
 @Component({
 
     templateUrl: 'app/components/user/login.component.html',
     styleUrls: ['app/components/user/userstyles.component.css'],
-    
-
 })
 
 export class LoginComponent  {

@@ -29,6 +29,25 @@ export class UserService
     {
         delete USERS[userId]
     }
+    maxid()
+    {
+        let temp:number = 0;
+        let counter:number = 0;
+        let max: number = USERS.length;
+        while(counter < max)
+        {
+            if(temp < USERS[counter].id)
+            {
+            console.log(USERS[counter].id)
+            console.log(USERS[counter].userName)
+            
+            temp = USERS[counter].id;
+            console.log(temp)
+            }
+            counter= counter+1
+        }
+        return temp +1 ;
+    }
 
 }
 const USERS:IUser[]=         
