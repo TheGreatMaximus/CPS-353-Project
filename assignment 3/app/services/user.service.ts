@@ -23,7 +23,7 @@ export class UserService
     }
     updateUser(userId,user)
     {
-        USERS[userId]
+        USERS[userId] = user
     }
     deleteUser(userId)
     {

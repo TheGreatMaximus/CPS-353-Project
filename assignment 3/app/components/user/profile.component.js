@@ -17,10 +17,15 @@ var ProfileComponent = (function () {
         this.route = route;
     }
     ProfileComponent.prototype.ngOnInit = function () {
-        console.log(this.route.snapshot.params['uid']);
+        //console.log(this.route.snapshot.params['uid'])
         this.user = this.userService.findUserById(+this.route.snapshot.params['uid']);
-        console.log(this.user.firstName);
+        //console.log(this.user.firstName)
+        //console.log(this.user)
+    };
+    ProfileComponent.prototype.delete = function () {
         console.log(this.user);
+        console.log(this.user.id);
+        this.userService.deleteUser(this.userService.findUserById(this.user.id));
     };
     return ProfileComponent;
 }());

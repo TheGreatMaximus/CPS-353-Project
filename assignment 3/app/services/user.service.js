@@ -26,7 +26,7 @@ var UserService = (function () {
         return USERS.find(function (user) { return (user.userName === username && user.password === password); });
     };
     UserService.prototype.updateUser = function (userId, user) {
-        USERS[userId];
+        USERS[userId] = user;
     };
     UserService.prototype.deleteUser = function (userId) {
         delete USERS[userId];

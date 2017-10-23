@@ -18,7 +18,9 @@ export class RegisterComponent  {
     register(registerForm)
     {
         console.log(registerForm.username)
-        if(registerForm.password == registerForm.password2)
+        if(registerForm.password == registerForm.password2 
+            && registerForm.password!=null && registerForm.username!=null
+            && registerForm.lastName!=null && registerForm.lastName!=null)
         {
             var user =
             {
@@ -42,6 +44,27 @@ export class RegisterComponent  {
         {
             this.errorMessage="passwords do not match."
         }
+    }
+    update(userForm)
+    {
+        var user =
+        {
+            userName: '',
+            firstName:'',
+            lastName:'',
+            password:'',
+            id: 1
+        } as IUser
+        this.user = this.userService.findUserByUsername(userForm.username)
+        console.log(this.user)
+        user.userName = userForm.username
+        user.firstName = userForm.firstname
+        user.lastName = userForm.lastname
+        user.password = userForm.password
+        user.id = this.user.id
+        console.log(user)
+        this.userService.updateUser(this.user.id,userForm)
+        console.log(this.user)
     }
 
 }

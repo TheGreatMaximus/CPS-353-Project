@@ -1,4 +1,4 @@
-import {Component,OnInit } from '@angular/core'
+import {Component,OnInit} from '@angular/core'
 import {UserService} from '../../services/user.service'
 import {ActivatedRoute} from '@angular/router'
 import { IUser } from '../../services/user.model'
@@ -16,10 +16,15 @@ export class ProfileComponent implements OnInit {
     constructor(private userService: UserService, private route: ActivatedRoute) {
     }
     ngOnInit() {
-        console.log(this.route.snapshot.params['uid'])
+        //console.log(this.route.snapshot.params['uid'])
         this.user = this.userService.findUserById(+this.route.snapshot.params['uid'])
-        console.log(this.user.firstName)
-        console.log(this.user)
+        //console.log(this.user.firstName)
+        //console.log(this.user)
         }
-
+    delete()
+    {
+        console.log(this.user)
+        console.log(this.user.id)
+        this.userService.deleteUser(this.userService.findUserById(this.user.id))
+    }
 }
