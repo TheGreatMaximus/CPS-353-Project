@@ -1,0 +1,18 @@
+
+        <h1 class="headerTitle">Profile</h1> 
+            <a [routerLink]="['/user',userId]"> 
+                <i class="glyphicon glyphicon-ok" id="ok"></i> 
+            </a>
+        <div class="space"></div>
+        <title>profile</title>
+            <h4 class ="subTitle">Username</h4>
+            <input (ngModel)="username" name="username" class ="form-control"type="text" value="{{user.userName}}">
+            <h4 class ="subTitle">First Name</h4>
+            <input (ngModel)="firstname" name="firstname" class ="form-control"type="text" value="{{user.firstName}}">
+            <h4 class ="subTitle">Last Name</h4>
+            <input (ngModel)="lastName" name="lastname" class ="form-control" type="text" value="{{user.lastName}}">
+            <a class="btn-success" role="button" id="website_button" type="submit" >Delete</a>
+            <a routerLink="/login" class="btn-danger" role="button" id="logout_button">Logout</a>
+        <a [routerLink]="['/user',userId]">
+        <i class="glyphicon glyphicon-user" id="user"></i> 
+        </a>

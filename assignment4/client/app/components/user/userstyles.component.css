@@ -1,0 +1,358 @@
+body{
+    background-color:whitesmoke;
+    overflow-x: hidden; 
+    overflow-y: auto;
+}
+.lContainer
+{
+    width:30%;
+    left:0;
+    display: none;
+}
+.rContainer
+{
+    width:100%;
+}
+.form-control-split
+{   
+    display: block;
+    width:90%;
+    margin-right:10%;
+    margin-left:5%;
+    margin-bottom: 5px;
+}
+.title {
+    padding-top: 5%;
+    margin-left:15%;
+    color: white;
+}
+.subTitle
+{
+    margin-left: 15%;
+}
+.subTitle-landscape
+{
+    margin-left:10px;
+}
+.contentTitle
+{
+    color:black;
+    font-size: 1em;
+    margin:0;
+    margin-left:7%;
+    margin-top: 15px;
+    padding:0;
+}
+.glyphicon
+{
+    display :inline-block;
+    color: whitesmoke;
+}
+#textarea
+{
+    height: 100px;
+}
+#ok
+{
+    float:right;
+    margin-top:30px;
+    margin-right:20px;
+}
+#user
+{
+    float:right;
+    margin-top:25px;
+    margin-right:20px;
+}
+#arrowleft
+{
+    float:left;
+    margin-top:25px;
+    margin-left:2px;
+    margin-right:0;
+    font-size: 25px;
+}
+#arrowleft2
+{
+    float:left;
+    margin-top:25px;
+    margin-left:2px;
+    margin-right:0;
+    font-size: 25px;
+}
+#cog
+{
+
+    color:black;
+    float:right;  
+    font-size:1em;
+    margin-top:10px;
+    padding:0;
+}
+#plus
+{
+    float:right;
+    margin-top:30px;
+    margin-right:5%;
+    font-size: 20px;
+}
+.form-control {
+    display: block;
+    width: 70%;
+    margin-right:15%;
+    margin-left:15%;
+    margin-bottom: 5px;
+}
+
+.btn-success{
+    color:#FFFFFF; 
+    display: block;
+    text-align: center;
+    width:70%;
+    margin-right:15%;
+    margin-left:15%;
+    margin-bottom: 5px;
+}
+
+.btn-primary{
+    color:#FFFFFF;
+    display : block;
+    text-align: center;  
+    width:70%;
+    margin-right:15%;
+    margin-left:15%;
+    margin-bottom: 5px;
+}
+.btn-danger{
+    color:#FFFFFF;
+    display : block;
+    text-align: center;  
+    width:70%;
+    margin-right:15%;
+    margin-left:15%;
+}
+.space
+{
+    margin-top:70px;
+}
+.headerTitle
+{
+    color:whitesmoke;
+    display:inline-block;
+    margin-top:15px;
+    margin-left:15%;
+    position: fixed;
+}
+.headerTitle2
+{
+    color:whitesmoke;
+    font-size:26px;
+    margin-top:25px;
+    margin-left:60px;
+    position: fixed;
+}
+.header
+{
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    width: 100%;
+    background-color: #2f96b4; 
+}
+.headerH1
+{
+    color: whitesmoke;
+    margin-left: 35px;
+    position: fixed;
+}
+.headerH2
+{
+    color: whitesmoke;
+    margin-left: 35px;
+    position: fixed;
+}
+.profileBottom
+{
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    width: 100%;
+    background-color: #2f96b4;  
+    position: absolute;
+    bottom:0;
+}
+#delete_button
+{
+    width:90%;
+    margin-left:5%;
+}
+
+@media (min-width: 768px) 
+{
+    #delete_button
+    {
+    width:80%;
+    margin-left:5%;
+    }
+    #arrowleft2
+    {
+        display:none;
+    }
+    .headerH2
+    {
+        position: relative;
+    }
+    .form-control-split
+    {   
+        display: block;
+        width: 80%;
+        margin-right:15%;
+        margin-left:5%;
+        margin-bottom: 5px;
+    }
+    .lContainer
+    {
+        display: inline-block;
+        float: left;
+    }
+    .rContainer
+    {
+        width:70%;
+        right:0;
+        display:inline-block;
+    }
+    .title
+    {
+        text-align: center;
+        margin-left:0;
+    }
+    .headerTitle
+    {
+        text-align:center;
+        margin-left:10%;
+    }
+    .subTitle
+    {
+        margin-left: 25%;
+    }
+    .form-control
+    {
+        margin:auto;
+        margin-bottom: 5px;
+        width:50%;
+    }
+    .btn-primary
+    {
+        margin:auto;
+        margin-bottom: 5px;
+        width:50%;
+    }
+    .btn-success
+    {
+        margin:auto;
+        margin-bottom: 5px;
+        width:50%;        
+    }
+    .btn-danger
+    {
+        margin:auto;
+        margin-bottom: 5px;
+        width:50%;  
+    }
+    #cog
+    {
+        margin-top: 5px;
+        margin-bottom:5px;
+        color:black;
+        float:right;  
+        font-size:1em;
+    }
+    .contentTitle
+    {
+        color:black;
+        font-size: 1em;
+        margin-left:5%;
+        margin-top:5px;
+        margin-bottom:10px;
+    }
+
+}
+@media (min-width: 992px)
+{
+    .headerTitle
+    {
+        margin-top:20px;
+        text-align:center;
+        margin-left:10%;
+    }
+    .headerTitle2
+    {
+        margin-top:20px;
+        font-size:32px;
+    }
+    .form-control
+    {
+        width:35%;
+    }
+    .btn-primary
+    {
+        width:35%;
+    }
+    .btn-success
+    {
+        width:35%;        
+    }
+    .btn-danger
+    {
+        width:35%;
+    }
+    .subTitle
+    {
+        margin-left:33%;
+    }
+    #user
+    {
+        font-size:1.5em;
+        margin-right:20px;
+    }
+    #ok
+    {       
+        font-size:1.5em;
+    }
+    .profileBottom
+    {
+        height: 70px;
+    }
+    .header
+    {
+        height: 70px;
+    }
+}
+@media (min-width:1200px)
+{
+    .headerTitle
+    {
+        text-align:center;
+        margin-left:5%;
+    }
+    .form-control
+    {
+        width:30%;
+    }
+    .btn-primary
+    {
+        width:30%;
+    }
+    .btn-success
+    {
+        width:30%;        
+    }
+    .btn-danger
+    {
+        width: 30%;
+    }
+    .subTitle
+    {
+        margin-left: 35%;
+    }
+}
