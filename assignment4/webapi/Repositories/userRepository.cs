@@ -7,10 +7,14 @@ namespace WebApi.Repositories
 {
     public class WebsiteRepository
     {
-        List<user> _users = new List<user> ();
+        static List<user> _users = new List<user> ();
+        
+        static int count = 0;
 
         public WebsiteRepository()
         {
+            if(count == 0)
+            {
           user user1 = new user() {id = 123, username = "alice",    password = "alice",    firstname =  "Alice",  lastname = "Wonder"  };
           user user2 = new user() {id = 234, username = "bob",      password = "bob",      firstname = "Bob",    lastname = "Marley"  };
           user user3 = new user() {id = 345, username = "charly",   password = "charly",   firstname = "Charly", lastname = "Garcia"  };
@@ -19,6 +23,8 @@ namespace WebApi.Repositories
           _users.Add(user2);
           _users.Add(user3);
           _users.Add(user4);
+          count++;
+            }
         }
 
         public List<user> Get()
