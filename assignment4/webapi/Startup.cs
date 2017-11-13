@@ -8,6 +8,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using WebApi;
+using System.Web.Http.Routing;
+using System.Net.Http;
 
 namespace webapi
 {
@@ -24,6 +27,12 @@ namespace webapi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddCors(options =>options.AddPolicy("AllowAllOrigins",
+                builder =>
+                {
+                    builder.AllowAnyOrigin();
+                })
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,8 +42,16 @@ namespace webapi
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseMvc();
+            app.UseCors("AllowAllOrigins");
+            app.UseMvc( 
+                // routes =>{
+            // routes.MapRoute("DefaultApiWithId", "Api/{controller}/{id?}", new { id = @"\d+" });
+            // routes.MapRoute("DefaultApiWithAction", "Api/{controller}/{action}");
+            // routes.MapRoute("DefaultApiGet", "Api/{controller}", new { action = "Get" }, new { httpMethod = new HttpMethodConstraint(HttpMethod.Get) });
+            // routes.MapRoute("DefaultApiPost", "Api/{controller}", new {action = "Post"}, new {httpMethod = new HttpMethodConstraint(HttpMethod.Post)});
+            // }
+            );
+            
         }
     }
 }

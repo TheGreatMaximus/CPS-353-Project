@@ -12586,11 +12586,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/max/Desktop/assignment4/webapi/webapi.csproj",
+      "projectUniqueName": "/home/max/Desktop/github/CPS353/assignment4/webapi/webapi.csproj",
       "projectName": "webapi",
-      "projectPath": "/home/max/Desktop/assignment4/webapi/webapi.csproj",
+      "projectPath": "/home/max/Desktop/github/CPS353/assignment4/webapi/webapi.csproj",
       "packagesPath": "/home/max/.nuget/packages/",
-      "outputPath": "/home/max/Desktop/assignment4/webapi/obj/",
+      "outputPath": "/home/max/Desktop/github/CPS353/assignment4/webapi/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"

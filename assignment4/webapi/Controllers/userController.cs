@@ -8,7 +8,7 @@ using webapi.Models;
 
 namespace webapi.Controllers
 {
-    [Route("api/user")]
+    [Route("api/[controller]")]
     public class userController : Controller
     {
 
@@ -32,11 +32,13 @@ namespace webapi.Controllers
         {
             return _websiteRepository.Get(id);
         }
+        [HttpGet("GetByUsername")]
         public user GetUserByUsername([FromQuery]string username)
         {
             return _websiteRepository.Get(username);
         }
-        public user GetUseByCredentials([FromQuery]string username,[FromQuery]string password)
+        [HttpGet ("GetByCredentials")]
+        public user GetUserByCredentials([FromQuery]string username,[FromQuery]string password)
         {
             return _websiteRepository.Get(username,password);
         }

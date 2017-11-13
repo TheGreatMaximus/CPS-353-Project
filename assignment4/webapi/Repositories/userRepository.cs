@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using webapi.Models;
-
 namespace WebApi.Repositories
 {
     public class WebsiteRepository
     {
-        private List<user> _users = new List<user> ();
+        List<user> _users = new List<user> ();
 
         public WebsiteRepository()
         {
@@ -21,11 +20,11 @@ namespace WebApi.Repositories
           _users.Add(user3);
           _users.Add(user4);
         }
+
         public List<user> Get()
         {
             return _users;
-        }
-        public user Get(int id)
+        }        public user Get(int id)
         {
             return _users.FirstOrDefault(u => u.id == id);
         }
@@ -54,5 +53,6 @@ namespace WebApi.Repositories
                 _users.Remove(usertemp);
             }
         }
+
     }
 }
