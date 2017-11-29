@@ -43,6 +43,7 @@ var RegisterComponent = (function () {
         }
     };
     RegisterComponent.prototype.update = function (userForm) {
+        var _this = this;
         var user = {
             userName: '',
             firstName: '',
@@ -50,7 +51,7 @@ var RegisterComponent = (function () {
             password: '',
             id: 1
         };
-        this.user = this.userService.findUserByUsername(userForm.username);
+        this.userService.findUserByUsername(userForm.username).subscribe(function (user) { _this.user = user; });
         console.log(this.user);
         user.userName = userForm.username;
         user.firstName = userForm.firstname;

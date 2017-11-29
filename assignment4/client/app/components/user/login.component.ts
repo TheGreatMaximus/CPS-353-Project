@@ -4,6 +4,7 @@ import {Router} from '@angular/router'
 import { IUser} from '../../services/user.model'
 import {NgForm} from '@angular/forms'
 
+
 @Component({
 
     templateUrl: 'app/components/user/login.component.html',
@@ -19,16 +20,23 @@ export class LoginComponent  {
     login(userForm)
     {
         this.errorMessage=""
-        this.user = this.userService.findUserByCredentials(userForm.username, userForm.password);
+        //this.user = 
+        this.userService.findUserByCredentials(userForm.username, userForm.password)
+        .subscribe(user=> {this.user = user
+        console.log(user)
+
         if(this.user)
-           {
-             //redirect to /user/user.id
-             this.router.navigate(['/user',this.user.id])
-           }
-        else 
         {
-            //show error message
-            this.errorMessage="user not found."
+          //redirect to /user/user.id
+          this.router.navigate(['/user',this.user.id])
         }
+       else 
+       {
+         //show error message
+         this.errorMessage="user not found."
+       }
+
+        }
+        );
     }
 }

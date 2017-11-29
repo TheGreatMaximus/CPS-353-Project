@@ -1,27 +1,36 @@
 import {Injectable} from '@angular/core'
 import { IUser } from './user.model'
-import { Http } from '@angular/http';
+import {Http, Response} from '@angular/http';
+import {Observable} from 'rxjs/Rx';
 @Injectable()
 
 export class UserService
 {
+
+    constructor(private http:Http) { }
+
     createUser(user)
     {
         USERS.push(user)
     }
-    findUserById(userId)
+    findUserById(userId) : Observable<IUser>
     {
         console.log("user.id"+ userId)
-        this.http.get()
-        return USERS.find(user => user.id === userId )
+        return this.http.get('http://localhost:5000/api/user/' + userId).map((res: Response) =>{ return<IUser>res.json()}).catch(this.handleError);
     }
     findUserByUsername(username)
     {
-        return USERS.find(user => user.userName === username)
+        return this.http.get('http://localhost:5000/api/user/GetUserByUsername?username=' + username).map((res: Response) =>{ return<IUser>res.json()}).catch(this.handleError);
     }
     findUserByCredentials(username,password)
     {
-        return USERS.find(user => (user.userName ===username && user.password === password))
+        let url = "http://localhost:5000/api/user/GetByCredentials?username="
+        +username+"&password="+password
+        console.log(url)
+
+        return this.http.get(url).map((response:Response) => { return  <IUser>response.json();}
+                ).catch(this.handleError)
+    
     }
     updateUser(userId,user)
     {
@@ -50,7 +59,9 @@ export class UserService
         }
         return temp +1 ;
     }
-
+    handleError(error: Response){
+        return Observable.throw(error.statusText)
+    }
 }
 const USERS:IUser[]=         
 

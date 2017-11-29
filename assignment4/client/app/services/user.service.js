@@ -9,21 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var Rx_1 = require("rxjs/Rx");
 var UserService = (function () {
-    function UserService() {
+    function UserService(http) {
+        this.http = http;
     }
     UserService.prototype.createUser = function (user) {
         USERS.push(user);
     };
     UserService.prototype.findUserById = function (userId) {
         console.log("user.id" + userId);
-        return USERS.find(function (user) { return user.id === userId; });
+        return this.http.get('http://localhost:5000/api/user/' + userId).map(function (res) { return res.json(); }).catch(this.handleError);
     };
     UserService.prototype.findUserByUsername = function (username) {
-        return USERS.find(function (user) { return user.userName === username; });
+        return this.http.get('http://localhost:5000/api/user/GetUserByUsername?username=' + username).map(function (res) { return res.json(); }).catch(this.handleError);
     };
     UserService.prototype.findUserByCredentials = function (username, password) {
-        return USERS.find(function (user) { return (user.userName === username && user.password === password); });
+        var url = "http://localhost:5000/api/user/GetByCredentials?username="
+            + username + "&password=" + password;
+        console.log(url);
+        return this.http.get(url).map(function (response) { return response.json(); }).catch(this.handleError);
     };
     UserService.prototype.updateUser = function (userId, user) {
         USERS[userId] = user;
@@ -46,11 +52,14 @@ var UserService = (function () {
         }
         return temp + 1;
     };
+    UserService.prototype.handleError = function (error) {
+        return Rx_1.Observable.throw(error.statusText);
+    };
     return UserService;
 }());
 UserService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [http_1.Http])
 ], UserService);
 exports.UserService = UserService;
 var USERS = [

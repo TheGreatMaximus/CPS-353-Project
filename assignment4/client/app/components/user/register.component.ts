@@ -55,7 +55,7 @@ export class RegisterComponent  {
             password:'',
             id: 1
         } as IUser
-        this.user = this.userService.findUserByUsername(userForm.username)
+        this.userService.findUserByUsername(userForm.username).subscribe(user=> {this.user = user})
         console.log(this.user)
         user.userName = userForm.username
         user.firstName = userForm.firstname

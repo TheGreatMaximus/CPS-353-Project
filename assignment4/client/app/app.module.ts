@@ -10,12 +10,11 @@ import { RegisterComponent } from './components/user/register.component'
 import { RouterModule,Routes } from '@angular/router' ;
 import { appRoutes } from './routes'
 import { FormsModule } from '@angular/forms'
-import { Http } from '@angular/http';
-//import { HttpClient } from '@angular/common/http';
+import { HttpModule,Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 @NgModule({
-    imports: [BrowserModule,RouterModule.forRoot(appRoutes),FormsModule],
+    imports: [BrowserModule,HttpModule,RouterModule.forRoot(appRoutes),FormsModule],
     declarations: [WebsitesAppComponent, NavbarComponent,LoginComponent,
                     RegisterComponent,ProfileComponent],
     providers: [WebsiteService,UserService],
