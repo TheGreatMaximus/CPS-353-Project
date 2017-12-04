@@ -1,0 +1,7 @@
+<title>Find Destination</title>
+<h1 class = "title">Search Destination</h1>
+
+<form (ngSubmit)="search(destination.value)" #destination="ngForm">
+    <input (ngModel)="destination" name="destination" class="form-control" type="text">
+    <a (click)="search(destination.value)" class="btn-primary" role="button" type="submit" >Search</a>
+</form>

@@ -1,0 +1,13 @@
+
+        <h1 class="title">Register</h1>
+        <title>Register</title>
+        <form (ngSubmit)="register(newuser.value)" #newuser="ngForm">
+                <input (ngModel)="username" name="username" class = "form-control" type="text" placeholder="Username">
+                <input (ngModel)="firstname" name="firstname" class = "form-control" type="text" placeholder="Firstname">
+                <input (ngModel)="lastname" name="lastname" class = "form-control" type="text" placeholder="Lastname">
+                <input (ngModel)="password" name="password"class = "form-control" type="password" placeholder="Password">
+                <input (ngModel)="password2" name="password2"class = "form-control" type="password" placeholder="Verify Password">
+                <input (ngModel)="email" name="email"class = "form-control" type="email" placeholder="Email">
+                <a (click)="register(newuser.value)" class="btn-success" role="button" id="register_button" type="submit"> Register </a>
+                <a routerLink="/login" class="btn-danger" role="button" id="back_button"> Back </a>
+        </form>
