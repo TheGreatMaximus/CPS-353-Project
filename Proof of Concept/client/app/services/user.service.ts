@@ -34,7 +34,7 @@ export class UserService
     }
     googleapi(discription)
     {
-        this.http.get('http://localhost:5000/api/user/googleplaces?discription='+discription).map((res: Response) =>{ return res.json()}).catch(this.handleError);
+        return this.http.get('http://localhost:5000/api/user/googleplaces?discription='+discription).map((res: Response) =>{ return res.json()}).catch(this.handleError);
         // console.log(discription)
         // return this.http.get('https://maps.googleapis.com/maps/api/place/autocomplete/json?input='
         // +discription+

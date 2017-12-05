@@ -16,8 +16,10 @@ export class destinationComponent  {
     
     search(searchForm)
     {
+        let jsonstring;
         console.log(searchForm)
-        //console.log(this.userService.googleapi(searchForm).subscribe(val => console.log(val)));
-        console.log(this.userService.googleapi(searchForm));
+        //console.log(this.userService.googleapi(searchForm).subscribe(val => jsonstring));
+        //console.log(this.userService.googleapi(searchForm));
+        console.log(jsonstring)
     }
 }

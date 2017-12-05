@@ -32,7 +32,7 @@ var UserService = (function () {
         return this.http.get(url).map(function (response) { return response.json(); }).catch(this.handleError);
     };
     UserService.prototype.googleapi = function (discription) {
-        this.http.get('http://localhost:5000/api/user/googleplaces?discription=' + discription).map(function (res) { return res.json(); }).catch(this.handleError);
+        return this.http.get('http://localhost:5000/api/user/googleplaces?discription=' + discription).map(function (res) { return res.json(); }).catch(this.handleError);
         // console.log(discription)
         // return this.http.get('https://maps.googleapis.com/maps/api/place/autocomplete/json?input='
         // +discription+
