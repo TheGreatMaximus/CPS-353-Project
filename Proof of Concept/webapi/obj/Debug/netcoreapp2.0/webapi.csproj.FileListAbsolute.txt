@@ -28,3 +28,13 @@
 /home/max/Desktop/POC2/webapi/obj/Debug/netcoreapp2.0/webapi.AssemblyInfo.cs
 /home/max/Desktop/POC2/webapi/obj/Debug/netcoreapp2.0/webapi.dll
 /home/max/Desktop/POC2/webapi/obj/Debug/netcoreapp2.0/webapi.pdb
+/home/max/Desktop/github/CPS353/Proof of Concept/webapi/bin/Debug/netcoreapp2.0/webapi.deps.json
+/home/max/Desktop/github/CPS353/Proof of Concept/webapi/bin/Debug/netcoreapp2.0/webapi.runtimeconfig.json
+/home/max/Desktop/github/CPS353/Proof of Concept/webapi/bin/Debug/netcoreapp2.0/webapi.runtimeconfig.dev.json
+/home/max/Desktop/github/CPS353/Proof of Concept/webapi/bin/Debug/netcoreapp2.0/webapi.dll
+/home/max/Desktop/github/CPS353/Proof of Concept/webapi/bin/Debug/netcoreapp2.0/webapi.pdb
+/home/max/Desktop/github/CPS353/Proof of Concept/webapi/obj/Debug/netcoreapp2.0/webapi.csproj.CoreCompileInputs.cache
+/home/max/Desktop/github/CPS353/Proof of Concept/webapi/obj/Debug/netcoreapp2.0/webapi.AssemblyInfoInputs.cache
+/home/max/Desktop/github/CPS353/Proof of Concept/webapi/obj/Debug/netcoreapp2.0/webapi.AssemblyInfo.cs
+/home/max/Desktop/github/CPS353/Proof of Concept/webapi/obj/Debug/netcoreapp2.0/webapi.dll
+/home/max/Desktop/github/CPS353/Proof of Concept/webapi/obj/Debug/netcoreapp2.0/webapi.pdb

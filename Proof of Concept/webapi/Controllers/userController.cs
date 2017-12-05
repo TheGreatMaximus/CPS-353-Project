@@ -5,13 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Repositories;
 using webapi.Models;
+using System.Web;
+using System.Net;
+using System.IO;
 
 namespace webapi.Controllers
 {
     [Route("api/[controller]")]
     public class userController : Controller
     {
-
         private WebsiteRepository _websiteRepository;
 
         public userController()
@@ -77,5 +79,26 @@ namespace webapi.Controllers
             _websiteRepository.AddDesttoUser(user,x);
         }
 
+        [HttpGet("googleplaces")]
+        public string getdestination(string discription)
+        {
+            string url = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input="
+            +discription+
+            "&types=establishment&location=42.5894,-70.8209&radius=500&key=AIzaSyA-VEcPYKRjPUSedxY_YBjaLOGEhoBstyU";
+
+            HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(url);
+
+            string responseString = "";
+            using (HttpWebResponse webResponse = (HttpWebResponse)webRequest.GetResponse())
+            {
+                using (StreamReader responseStream = new StreamReader(webResponse.GetResponseStream()))
+                {
+                    responseString = responseStream.ReadToEnd();
+                }
+
+            }
+            return responseString;
+
+        }
     }
 }

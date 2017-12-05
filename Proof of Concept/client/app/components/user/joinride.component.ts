@@ -6,18 +6,12 @@ import {NgForm} from '@angular/forms'
 
 @Component({
 
-    templateUrl: 'app/components/user/destination.component.html',
+    templateUrl: 'app/components/user/joinride.component.html',
     styleUrls: ['app/components/user/userstyles.component.css'],
 })
 
-export class destinationComponent  {
+export class joinrideComponent  {
     constructor(private userService: UserService,private router:Router) {
     }
     
-    search(searchForm)
-    {
-        console.log(searchForm)
-        //console.log(this.userService.googleapi(searchForm).subscribe(val => console.log(val)));
-        console.log(this.userService.googleapi(searchForm));
-    }
 }

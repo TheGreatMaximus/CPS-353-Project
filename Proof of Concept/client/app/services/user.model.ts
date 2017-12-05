@@ -1,3 +1,5 @@
+import {destination} from './destination.model'
+
 export interface IUser {
     id: number,
     firstName: string,
@@ -5,4 +7,5 @@ export interface IUser {
     password:string,
     userName:string,
     email:string
+    destinations:Array<destination>,
 }

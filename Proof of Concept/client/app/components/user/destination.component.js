@@ -17,8 +17,8 @@ var destinationComponent = (function () {
         this.router = router;
     }
     destinationComponent.prototype.search = function (searchForm) {
-        var jsonresponse = "";
         console.log(searchForm);
+        //console.log(this.userService.googleapi(searchForm).subscribe(val => console.log(val)));
         console.log(this.userService.googleapi(searchForm));
     };
     return destinationComponent;

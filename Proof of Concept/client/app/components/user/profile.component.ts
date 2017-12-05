@@ -22,10 +22,4 @@ export class ProfileComponent implements OnInit {
         //console.log(this.user.firstName)
         //console.log(this.user)
         }
-    delete()
-    {
-        console.log(this.user)
-        console.log(this.user.id)
-        this.userService.deleteUser(this.userService.findUserById(this.user.id))
-    }
 }

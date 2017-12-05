@@ -24,11 +24,6 @@ var ProfileComponent = (function () {
         //console.log(this.user.firstName)
         //console.log(this.user)
     };
-    ProfileComponent.prototype.delete = function () {
-        console.log(this.user);
-        console.log(this.user.id);
-        this.userService.deleteUser(this.userService.findUserById(this.user.id));
-    };
     return ProfileComponent;
 }());
 ProfileComponent = __decorate([
