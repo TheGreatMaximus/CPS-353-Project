@@ -11,15 +11,22 @@ import {NgForm} from '@angular/forms'
 })
 
 export class destinationComponent  {
+
+    parsedjson:any;
+    jsonstring:any;
+    destinationlist:Array<string>= [];
     constructor(private userService: UserService,private router:Router) {
     }
     
     search(searchForm)
     {
-        let jsonstring;
-        console.log(searchForm)
-        //console.log(this.userService.googleapi(searchForm).subscribe(val => jsonstring));
-        //console.log(this.userService.googleapi(searchForm));
-        console.log(jsonstring)
+        let i;
+        console.log(searchForm.destination)
+        this.userService.googleapi(searchForm.destination).subscribe(val =>{this.jsonstring = val; 
+            console.log(this.jsonstring);
+         for (i = 0; i < this.jsonstring.predictions.length; i++) {
+             this.destinationlist[i] = this.jsonstring.predictions[i].description;
+          }
+        });
     }
 }

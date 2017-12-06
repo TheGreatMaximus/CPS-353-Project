@@ -8,6 +8,8 @@ using webapi.Models;
 using System.Web;
 using System.Net;
 using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace webapi.Controllers
 {
@@ -80,7 +82,7 @@ namespace webapi.Controllers
         }
 
         [HttpGet("googleplaces")]
-        public string getdestination(string discription)
+        public object getdestination(string discription)
         {
             string url = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input="
             +discription+
@@ -97,6 +99,8 @@ namespace webapi.Controllers
                 }
 
             }
+            var responseJson = JsonConvert.DeserializeObject(responseString);                
+            
             return responseString;
 
         }
