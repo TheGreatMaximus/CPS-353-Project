@@ -6,10 +6,27 @@
     <a (click)="search(destination.value)" class="btn-primary" role="button" type="submit" >Search</a>
 </form>
 
-<textarea class ="form-control"rows="8" cols="50">
-    {{destinationlist[0]}}
-    {{destinationlist[1]}}
-    {{destinationlist[2]}}
-    {{destinationlist[3]}}
-    {{destinationlist[4]}}
-</textarea> 
+<form (ngSubmit)="add(destination1.value)" #destination1="ngForm">
+    <input (ngModel)="destination" name="destination" class="form-control" type="text" value={{destinationlist[0]}}>
+    <a (click)="add(destination1.value)" class="btn-primary" role="button" type="submit" >Select</a>
+</form>
+
+<form (ngSubmit)="add(destination2.value)" #destination2="ngForm">
+    <input (ngModel)="destination" name="destination" class="form-control" type="text" value={{destinationlist[1]}}>
+    <a (click)="add(destination2.value)" class="btn-primary" role="button" type="submit" >Select</a>
+</form>
+
+<form (ngSubmit)="add(destination3.value)" #destination3="ngForm">
+    <input (ngModel)="destination" name="destination" class="form-control" type="text" value={{destinationlist[2]}}>
+    <a (click)="add(destination3.value)" class="btn-primary" role="button" type="submit" >Select</a>
+</form>
+
+<form (ngSubmit)="add(destination4.value)" #destination4="ngForm">
+    <input (ngModel)="destination" name="destination" class="form-control" type="text" value={{destinationlist[3]}}>
+    <a (click)="add(destination4.value)" class="btn-primary" role="button" type="submit" >Select</a>
+</form>
+
+<form (ngSubmit)="add(destination5.value)" #destination5="ngForm">
+    <input (ngModel)="destination" name="destination" class="form-control" type="text" value={{destinationlist[4]}}>
+    <a (click)="add(destination5.value)" class="btn-primary" role="button" type="submit" >Select</a>
+</form>

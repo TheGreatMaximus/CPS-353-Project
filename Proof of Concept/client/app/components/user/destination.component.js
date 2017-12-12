@@ -29,6 +29,8 @@ var destinationComponent = (function () {
             }
         });
     };
+    destinationComponent.prototype.add = function (destinationForm) {
+    };
     return destinationComponent;
 }());
 destinationComponent = __decorate([

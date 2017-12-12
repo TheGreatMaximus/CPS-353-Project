@@ -38,7 +38,12 @@ export class RegisterComponent  {
             user.password = registerForm.password
             user.email = registerForm.email
             user.id = this.userService.maxid() + RegisterComponent.counter;
-            console.log(user)
+            console.log(user.firstName)
+            console.log(user.email)
+            console.log(user.id)
+            console.log(user.password)
+            console.log(user.lastName);
+            console.log(user.userName);
             this.userService.createUser(user)
             this.route.navigate(['/user',user.id])
             RegisterComponent.counter++;

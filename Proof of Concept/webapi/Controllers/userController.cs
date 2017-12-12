@@ -74,7 +74,7 @@ namespace webapi.Controllers
             _websiteRepository.Remove(id);
         }
 
-        [HttpPost("destinationInfo")]
+        [HttpPost("addDestination")]
         
         public void addDestinations([FromQuery]user user,[FromQuery]destination x)
         {

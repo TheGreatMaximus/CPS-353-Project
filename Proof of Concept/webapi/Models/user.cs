@@ -11,6 +11,8 @@ namespace webapi.Models
         public string password {get;set;}
         public string username {get;set;}
 
+        public string email {get;set;}
+
         public List<destination> _destinations = new List<destination> ();
     }
 

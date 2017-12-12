@@ -2,7 +2,7 @@ import {Component } from '@angular/core'
 import {UserService} from '../../services/user.service'
 import {Router} from '@angular/router'
 import {NgForm} from '@angular/forms'
-
+import { IUser } from '../../services/user.model'
 
 @Component({
 
@@ -12,6 +12,7 @@ import {NgForm} from '@angular/forms'
 
 export class destinationComponent  {
 
+    user:IUser;
     parsedjson:any;
     jsonstring:any;
     destinationlist:Array<string>= [];
@@ -27,6 +28,10 @@ export class destinationComponent  {
          for (i = 0; i < this.jsonstring.predictions.length; i++) {
              this.destinationlist[i] = this.jsonstring.predictions[i].description;
           }
-        });
+         });
+    }
+    add(destinationForm)
+    {
+        
     }
 }

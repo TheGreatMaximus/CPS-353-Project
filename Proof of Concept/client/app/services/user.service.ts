@@ -13,14 +13,14 @@ export class UserService
     {
         this.http.post('http://localhost:5000/api/user/',user);
     }
-    findUserById(userId) : Observable<IUser>
+    findUserById(userId)
     {
-        console.log("user.id"+ userId)
+        //console.log("user.id"+ userId)
         return this.http.get('http://localhost:5000/api/user/' + userId).map((res: Response) =>{ return<IUser>res.json()}).catch(this.handleError);
     }
     findUserByUsername(username)
     {
-        return this.http.get('http://localhost:5000/api/user/GetUserByUsername?username=' + username).map((res: Response) =>{ return<IUser>res.json()}).catch(this.handleError);
+        return this.http.get('http://localhost:5000/api/user/GetUserByUsername?username=' + username).map((res: Response) =>{ console.log(res.json());  return <IUser>res.json() }).catch(this.handleError);
     }
     findUserByCredentials(username,password)
     {
@@ -31,6 +31,9 @@ export class UserService
         return this.http.get(url).map((response:Response) => { return  <IUser>response.json();}
                 ).catch(this.handleError)
     
+    }
+    addUserDestination(destination,user)
+    {
     }
     googleapi(discription)
     {

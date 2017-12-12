@@ -19,17 +19,19 @@ var UserService = (function () {
         this.http.post('http://localhost:5000/api/user/', user);
     };
     UserService.prototype.findUserById = function (userId) {
-        console.log("user.id" + userId);
+        //console.log("user.id"+ userId)
         return this.http.get('http://localhost:5000/api/user/' + userId).map(function (res) { return res.json(); }).catch(this.handleError);
     };
     UserService.prototype.findUserByUsername = function (username) {
-        return this.http.get('http://localhost:5000/api/user/GetUserByUsername?username=' + username).map(function (res) { return res.json(); }).catch(this.handleError);
+        return this.http.get('http://localhost:5000/api/user/GetUserByUsername?username=' + username).map(function (res) { console.log(res.json()); return res.json(); }).catch(this.handleError);
     };
     UserService.prototype.findUserByCredentials = function (username, password) {
         var url = "http://localhost:5000/api/user/GetByCredentials?username="
             + username + "&password=" + password;
         console.log(url);
         return this.http.get(url).map(function (response) { return response.json(); }).catch(this.handleError);
+    };
+    UserService.prototype.addUserDestination = function (destination, user) {
     };
     UserService.prototype.googleapi = function (discription) {
         return this.http.get('http://localhost:5000/api/user/googleplaces?discription=' + discription).map(function (res) {
