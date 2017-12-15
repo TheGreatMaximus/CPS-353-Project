@@ -18,9 +18,10 @@ export class RegisterComponent  {
     register(registerForm)
     {
         console.log(registerForm.username)
+        console.log(registerForm.password)
         if(registerForm.password == registerForm.password2 
             && registerForm.password!=null && registerForm.username!=null
-            && registerForm.lastName!=null && registerForm.lastName!=null)
+            && registerForm.lastname!=null && registerForm.lastname!=null)
         {
             var user =
             {
@@ -29,7 +30,8 @@ export class RegisterComponent  {
                 lastName:'',
                 password:'',
                 email:'',
-                id: 1
+                id: 1,
+                destinations:[]
             } as IUser
             console.log(user)
             user.userName = registerForm.username
@@ -38,12 +40,7 @@ export class RegisterComponent  {
             user.password = registerForm.password
             user.email = registerForm.email
             user.id = this.userService.maxid() + RegisterComponent.counter;
-            console.log(user.firstName)
-            console.log(user.email)
-            console.log(user.id)
-            console.log(user.password)
-            console.log(user.lastName);
-            console.log(user.userName);
+            console.log("created "+user);
             this.userService.createUser(user)
             this.route.navigate(['/user',user.id])
             RegisterComponent.counter++;

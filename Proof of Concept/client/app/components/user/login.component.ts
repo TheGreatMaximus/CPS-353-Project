@@ -20,7 +20,18 @@ export class LoginComponent  {
     login(userForm)
     {
         this.errorMessage=""
-        //this.user = 
+
+        // var user =
+        // {
+        //     userName: '',
+        //     firstName:'',
+        //     lastName:'',
+        //     password:'',
+        //     email:'',
+        //     id: 1,
+        //     destinations:[]
+        // } as IUser
+
         this.userService.findUserByCredentials(userForm.username, userForm.password)
         .subscribe(user=> {this.user = user
         console.log(user)

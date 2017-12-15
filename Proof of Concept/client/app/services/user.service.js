@@ -16,7 +16,10 @@ var UserService = (function () {
         this.http = http;
     }
     UserService.prototype.createUser = function (user) {
-        this.http.post('http://localhost:5000/api/user/', user);
+        console.log(user);
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        this.http.post('http://localhost:5000/api/user/', JSON.stringify(user), options).catch(this.handleError);
     };
     UserService.prototype.findUserById = function (userId) {
         //console.log("user.id"+ userId)
@@ -32,6 +35,10 @@ var UserService = (function () {
         return this.http.get(url).map(function (response) { return response.json(); }).catch(this.handleError);
     };
     UserService.prototype.addUserDestination = function (destination, user) {
+        console.log(user);
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        this.http.post('http://localhost:5000/api/user/', JSON.stringify(user, destination), options).catch(this.handleError);
     };
     UserService.prototype.googleapi = function (discription) {
         return this.http.get('http://localhost:5000/api/user/googleplaces?discription=' + discription).map(function (res) {

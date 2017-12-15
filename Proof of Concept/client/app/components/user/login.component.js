@@ -19,7 +19,16 @@ var LoginComponent = (function () {
     LoginComponent.prototype.login = function (userForm) {
         var _this = this;
         this.errorMessage = "";
-        //this.user = 
+        // var user =
+        // {
+        //     userName: '',
+        //     firstName:'',
+        //     lastName:'',
+        //     password:'',
+        //     email:'',
+        //     id: 1,
+        //     destinations:[]
+        // } as IUser
         this.userService.findUserByCredentials(userForm.username, userForm.password)
             .subscribe(function (user) {
             _this.user = user;

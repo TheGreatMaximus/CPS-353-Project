@@ -30,6 +30,8 @@ var destinationComponent = (function () {
         });
     };
     destinationComponent.prototype.add = function (destinationForm) {
+        console.log(destinationForm.destination);
+        this.userService.addUserDestination(destinationForm.destination, this.user);
     };
     return destinationComponent;
 }());

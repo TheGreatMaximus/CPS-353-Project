@@ -19,7 +19,28 @@ var ProfileComponent = (function () {
     ProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
         console.log(this.route.snapshot.params['uid']);
-        this.userService.findUserById(+this.route.snapshot.params['uid']).subscribe(function (user) { _this.user = user; });
+        this.user =
+            {
+                userName: '',
+                firstName: '',
+                destinations: [],
+                lastName: '',
+                password: '',
+                email: '',
+                id: 1
+            };
+        this.userService.findUserById(+this.route.snapshot.params['uid'])
+            .subscribe(function (user) {
+            console.log(user);
+            _this.user = user;
+            _this.user.userName = user.userName;
+            _this.user.firstName = user.firstName;
+            _this.user.lastName = user.lastName;
+            _this.user.email = _this.user.email;
+            _this.user.id = _this.user.id;
+            _this.user.destinations = _this.user.destinations;
+            _this.user.password = user.password;
+        });
         //console.log(this.user.firstName)
         //console.log(this.user)
     };

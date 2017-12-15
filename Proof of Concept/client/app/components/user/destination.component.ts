@@ -32,6 +32,7 @@ export class destinationComponent  {
     }
     add(destinationForm)
     {
-        
+        console.log(destinationForm.destination)
+        this.userService.addUserDestination( destinationForm.destination, this.user)
     }
 }

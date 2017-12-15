@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core'
 import { IUser } from './user.model'
-import {Http, Response} from '@angular/http';
+import { Http, Response, Headers, RequestOptions} from '@angular/http'
 import {Observable} from 'rxjs/Rx';
 @Injectable()
 
@@ -11,7 +11,12 @@ export class UserService
 
     createUser(user)
     {
-        this.http.post('http://localhost:5000/api/user/',user);
+        console.log(user);
+        let headers = new Headers({ 'Content-Type': 'application/json' })
+        let options = new RequestOptions({ headers: headers })
+
+        this.http.post('http://localhost:5000/api/user/',JSON.stringify(user),
+        options).catch(this.handleError);
     }
     findUserById(userId)
     {
@@ -34,6 +39,12 @@ export class UserService
     }
     addUserDestination(destination,user)
     {
+        console.log(user);
+        let headers = new Headers({ 'Content-Type': 'application/json' })
+        let options = new RequestOptions({ headers: headers })
+        
+        this.http.post('http://localhost:5000/api/user/',JSON.stringify(user,destination),
+        options).catch(this.handleError);
     }
     googleapi(discription)
     {

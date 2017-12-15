@@ -15,10 +15,10 @@ namespace WebApi.Repositories
         {
             if(count == 0)
             {
-            user user1 = new user() {id = 123, username = "alice",    password = "alice",    firstname =  "Alice",  lastname = "Wonder"  };
-            user user2 = new user() {id = 234, username = "bob",      password = "bob",      firstname = "Bob",    lastname = "Marley"  };
-            user user3 = new user() {id = 345, username = "charly",   password = "charly",   firstname = "Charly", lastname = "Garcia"  };
-            user user4 = new user() {id = 456, username = "jannunzi", password = "jannunzi", firstname = "Jose",   lastname = "Annunzi" };
+            user user1 = new user() {id = 123, userName = "alice",    password = "alice",    firstName =  "Alice", lastName = "Wonder"  };
+            user user2 = new user() {id = 234, userName = "bob",      password = "bob",      firstName = "Bob",    lastName = "Marley"  };
+            user user3 = new user() {id = 345, userName = "charly",   password = "charly",   firstName = "Charly", lastName = "Garcia"  };
+            user user4 = new user() {id = 456, userName = "jannunzi", password = "jannunzi", firstName = "Jose",   lastName = "Annunzi" };
             _users.Add(user1);
             _users.Add(user2);
             _users.Add(user3);
@@ -37,11 +37,11 @@ namespace WebApi.Repositories
         }
         public user Get(string username)
         {
-            return _users.FirstOrDefault(u => u.username == username);
+            return _users.FirstOrDefault(u => u.userName == username);
         }
         public user Get(string username, string password)
         {
-            return _users.FirstOrDefault(u => u.username == username && u.password == password);
+            return _users.FirstOrDefault(u => u.userName == username && u.password == password);
         }
         public void Add(user user)
         {
